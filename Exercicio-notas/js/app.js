@@ -1,8 +1,3 @@
-// MediaCheckpoint = ((maior ckeckpoint + segundo maior checkpoint)/2) * 0.4
-// MediaSprint = ((Sprint 01 + Sprint 02)/2) * 0.6
-// MediaSemestral = ((MediaCheckpoint + MediaSprint) * 0.4) + (GlobalSolution * 0.6)
-//
-//conts valor1 = Number(document.querySelector(‘#id do campo’).value);
 let temp = 0
 
 //pegando o botão e criando uma função que scancela o submit
@@ -44,12 +39,12 @@ document.querySelector('#dados').addEventListener('submit', function (e) {
         document.querySelector('#nomeAluno'),
         document.querySelector('#disciplina'),
     ]
-
+    
     //para não deixar o usuario não digitar nada nas options
     if (dadosS[1].value === '0') {
-        alert('Por favor, selecione uma conta válida');
-        dadosS[1].focus();
-        return;
+        alert('Por favor, selecione uma conta válida')
+        dadosS[1].focus()
+        return
     }
     
     const dadosN = [
@@ -74,28 +69,31 @@ document.querySelector('#dados').addEventListener('submit', function (e) {
         
         // criando uma td para cada dado
         const td = document.createElement('td')
-
+        
         //colocando na td o conteúdo do campo
         td.textContent = dado.value
-
+        
         // colocando a td na tr que foi anteriormente criada
         tr.append(td)
     })
     //mesmo processo, mas para exibir cada index do vetor de numbers
     dadosN.forEach(dado => {
-
+        
         const td = document.createElement('td')
-
+        
         td.textContent = dado.toFixed(1)
-
+        
         tr.append(td)
     })
-
+    
     // colocar a tr no tbody
-    tbody.prepend(tr);
-
+    tbody.prepend(tr)
+    
     // Limpando o formulário
     this.reset()
+    
+    //colocar o foco no primeiro elemento do formulario 
+    dadosS[0].focus()
 
     // Atualizar a data
     const dataAtual = new Date()
