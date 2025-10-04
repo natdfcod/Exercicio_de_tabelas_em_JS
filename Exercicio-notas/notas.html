@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Notas</title>
+
+    <!-- link para o BootStrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="bg-danger p-4">
+        <h1 class="display-4 text-light">Sistema de Notas</h1>
+    </div>
+
+
+    <div class="container">
+        <form class="dados" id="dados" method="get" action="">
+            <div></div>
+            <h4 class="mt-4">Dados dos alunos</h4>
+            <div class="row mb-3">
+                <div class="col-md-6 mb-3">
+                    <label for="nomeAluno" class="form-label">Aluno</label>
+                    <input type="text" class="form-control" id="nomeAluno" name="nomeAluno"
+                        placeholder="ex: Darth Vader" autofocus>
+                </div>
+               
+
+                <div class="col-md-6 mb-3">
+                    <label for="disciplina" class="form-label">Disciplina</label>
+                    <select id="disciplina" class="form-select"  >
+                        <option value="0">Selecione a disciplina</option>
+                        <option value="AOC">Arq. Org. Computadores</option>
+                        <option value="LND">Lab. Neg. Digitais</option>
+                        <option value="LP">Lab. Programação</option>
+                        <option value="RDP">Res. Dif. Problemas</option>
+                        <option value="SCD">Sen. Cir. Digitais</option>
+                        <option value="SIE">Sto. Ins. Empreendedora</option>
+                        <option value="WFD">Web. Front-end Developer</option>
+                    </select>
+                </div>
+
+                <hr class="my-4">
+                <h5>Notas dos Checkpoints</h5>
+                <div class="col-md-4 mb-3">
+                    <label for="text" class="form-label">Checkpoint 01</label>
+                    <input type="ckp01" class="form-control" id="ckp01" name="ckp01" placeholder="ex: 10.0"  >
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="text" class="form-label">Checkpoint 02</label>
+                    <input type="ckp02" class="form-control" id="ckp02" name="ckp02" placeholder="ex: 10.0"  >
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="text" class="form-label">Checkpoint 03</label>
+                    <input type="ckp03" class="form-control" id="ckp03" name="ckp03" placeholder="ex: 10.0"  >
+                </div>
+
+                <hr class="my-4">
+
+                <h5>
+                    Notas das Sprints / GS
+                </h5>
+                <div class="col-md-4 mb-3">
+                    <label for="text" class="form-label">Sprint 01</label>
+                    <input type="sprint01" class="form-control" id="sprint01" name="sprint01" placeholder="ex: 10.0"
+                         >
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="text" class="form-label">Sprint 02</label>
+                    <input type="sprint02" class="form-control" id="sprint02" name="sprint02" placeholder="ex: 10.0"
+                         >
+                </div>
+                
+                <div class="col-md-4 mb-3">
+                    <label for="text" class="form-label">Global Solution</label>
+                    <input type="globalSolution" class="form-control" id="globalSolution" name="globalSolution" placeholder="ex: 10.0">
+                </div>
+
+            </div>
+            <div class="d-flex justify-content-end mt-3">
+                <button type="submit" class="btn btn-danger" id="calcular">Calcular Notas</button>
+            </div>
+        </form>
+
+        <div class="my-4">
+            <h2>Relatório de Notas</h2>
+            <table id="resumo" class="table table-hover text-center">
+                <thead class="table-dark">
+                    <tr id="cabecalho">
+                        <th class="th-cabecalho">Aluno</th>
+                        <th class="th-cabecalho">Disciplina</th>
+                        <th class="th-cabecalho">Check. 01</th>
+                        <th class="th-cabecalho">Check. 02</th>
+                        <th class="th-cabecalho">Média Check</th>
+                        <th class="th-cabecalho">Sprint 01</th>
+                        <th class="th-cabecalho">Sprint 02</th>
+                        <th class="th-cabecalho">Média Sprint</th>
+                        <th class="th-cabecalho">GS</th>
+                        <th class="th-cabecalho">Média Sem.</th>
+                    </tr>
+                </thead>
+                <tbody class="my-5" id="historico"></tbody>
+                <tfoot class="table-dark">
+                    <tr>
+                        <td colspan="10" id="dataAtualizacao"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <script src="./js/app.js"></script>
+  
+</body>
+
+</html>
